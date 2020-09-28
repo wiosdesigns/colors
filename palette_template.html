@@ -1,0 +1,496 @@
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74355882-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-74355882-2');
+  </script>
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+  <meta property="og:url" content="https://colors.wios.xyz/{{row['id']}}.html"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>
+    {{', '.join(row['colornames'])}} color palette ({{row['id']}}) for UI Design Mockups
+  </title>
+  <meta property="og:title" content="{{', '.join(row['colornames'])}} color palette ({{row['id']}}) for UI Design Mockups"/>
+  
+
+  <meta name="description" content="Check out {{', '.join(row['colornames'])}} color palette to use in your UI mockups">
+  <meta property="og:description" content="Check out {{', '.join(row['colornames'])}} color palette to use in your UI mockups">
+  <meta name="twitter:description" content="Check out {{', '.join(row['colornames'])}} color palette to use in your UI mockups">
+  
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="app"></meta>
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/mononoki.min.css"> 
+  <style>
+    :root{
+      --dark: #{{row['colors'][0]}};
+      --theme: #{{row['colors'][1]}};
+      --accent: #{{row['colors'][2]}};
+      --light: #{{row['colors'][3]}};
+    }
+  </style>
+
+  <style>
+    *{
+      box-sizing: border-box;
+      font-family: 'mononoki', sans-serif;
+    }
+    body{
+      background: var(--light);
+      color: var(--dark);
+      display: grid;
+      grid-template-columns: repeat(12,1fr);
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+    }
+    header,nav,h2{
+      background: #f0f0f0;
+      color: #202020;
+      margin: 0;
+      padding: 1rem;
+      grid-column: span 12;
+    }
+    nav{
+      display: grid;
+      grid-template-columns: auto 1fr;
+      place-items: center end;
+    }
+    a{
+      color: inherit;
+    }
+    h1,h2{
+      font-weight: 200;
+      font-size: 135%;
+    }
+    h2{font-size: 120%; color: #202020;}
+    p{
+      margin: 0;
+      color: #202020;
+      text-align: left;
+    }
+    footer{
+      grid-column: span 12;
+      text-align: center;
+      padding: 1rem;
+      background: #202020;
+      color: #f0f0f0;
+    }
+    .container{
+      grid-column: span 4;
+      text-align: center; 
+    }
+    .mockup{
+      width: 85%; 
+      height: auto;
+      display: inline-block; 
+      border-radius: 10px;
+      box-shadow: 15px 15px 50px rgba(0,0,0,0.4);
+    }
+    .center{
+      text-align: center;
+    }
+    .icon{
+      width: auto;
+      height: 2rem;
+    }
+    .col25{
+      display: inline-grid;
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+      place-items: center stretch;
+      grid-column: span 3;
+      padding: 1rem;
+      background: #f0f0f0;
+      text-align: center;
+    }
+    .col25 p{
+      text-align: center;
+    }
+    .demo-box{
+      min-height: 3rem;
+      border-radius: 2px;
+    }
+    .capitalize{
+      text-transform: capitalize;
+    }
+    .btn{
+      display: inline-block;
+      background: #202020;
+      color: #f0f0f0;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 100rem;
+      border: 1px solid #202020;
+    }
+    .btn.secondary{
+      color: #202020;
+      background: #f0f0f0;
+    }
+    header{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+    .similar-link:hover{
+      opacity: 0.5;
+    }
+    @media only screen and (max-width: 768px) {
+      body{
+        display: block;
+      }
+      .mockup{
+        width: 100%;
+      }
+      .col25{
+        grid-template-columns: 1fr 1fr;
+      }
+      .col25 p{
+        text-align: left;
+      }
+      .container{
+        width: 100%;
+      }
+      header{
+        grid-template-columns: 1fr;
+      }
+      header>div:last-child{
+        padding: 1rem;
+      }
+    }
+  </style>
+  
+</head>
+
+<body>
+  <nav>
+    <a href="/">
+      <svg viewBox="0 0 250 100" class="icon">
+        <rect x=10 y=10 width=20 height=45 style="fill: #c04040;"/>
+        <rect x=40 y=10 width=55 height=20 style="fill: #20c060;"/>
+        <rect x=10 y=65 width=55 height=20 style="fill: #2060c0;"/>
+        <circle cx=85 cy=75 r=11 style="fill: #202020;"/>
+        <text x="130" y="45" style="fill: #202020; font-size: 50px;">
+          WIOS
+        </text>
+        <text x="130" y="85" style="fill: #202020; font-size: 35px;">
+          Colors
+        </text>
+      
+      </svg>
+    </a>
+    <a href="/">Home</a>
+  </nav>
+  <header>
+    <div>
+      <p>#{{row['id']}}:</p>
+      <h1 class="capitalize">Color palette from {{row['caption']}}</h1>
+    </div>
+    <div class="center">
+      <a href="javascript:history.back()" class="btn secondary">Back</a>
+      <a href="/{{row['next']}}.html" class="btn secondary">Next</a>
+    </div>  
+  </header>
+  
+  <div class="col25 center">
+    <p class="demo-box" style="background: #{{row['colors'][0]}};">
+    </p>
+    <p class="color-card">
+      {{row['colornames'][0]}}
+      <br>
+      #{{row['colors'][0]}}
+    </p> 
+  </div>
+  <div class="col25 center">
+    <p class="demo-box" style="background: #{{row['colors'][1]}};">
+    </p>
+    <p class="color-card">
+      {{row['colornames'][1]}}
+      <br>
+      #{{row['colors'][1]}}
+    </p> 
+  </div>
+  <div class="col25 center">
+    <p class="demo-box" style="background: #{{row['colors'][2]}};">
+    </p>
+    <p class="color-card">
+      {{row['colornames'][2]}}
+      <br>
+      #{{row['colors'][2]}}
+    </p> 
+  </div>
+  <div class="col25 center">
+    <p class="demo-box" style="background: #{{row['colors'][3]}};">
+    </p>
+    <p class="color-card"">
+      {{row['colornames'][3]}}
+      <br>
+      #{{row['colors'][3]}}
+    </p>
+  </div>
+
+  
+  <div class="container" style="display: inline-block; text-align: center; padding: 40px;">
+    <svg id="svg1" viewBox="0 0 360 640" class="mockup">
+      <!-- bg -->
+      <rect x=0 y=0 width=360 height=640 style="fill: var(--light);"/>
+      
+      <!-- header -->
+      <rect x=0 y=0 width=360 height=128 style="fill: var(--light);"/>
+      <text x="30" y="80" style="fill: var(--dark); font-size: 40px;">Mockup</text>
+      <rect x=280 y=60 width=50 height=5 style="fill: var(--theme);"/>
+      <rect x=300 y=70 width=30 height=5 style="fill: var(--theme);"/>
+      
+      <text x="30" y="210" style="fill: var(--theme); font-size: 30px;">
+        Heading
+      </text>
+      <rect x=30 y=220 width=30 height=3 style="fill: var(--accent);"/>
+      
+      <text x="30" y="270" style="fill: var(--dark); font-size: 20px;">
+        The quick brown fox jumps
+      </text>
+      <text x="30" y="300" style="fill: var(--dark); font-size: 20px;">
+        over the lazy dog. Pack my
+      </text>
+      <text x="30" y="330" style="fill: var(--dark); font-size: 20px;">
+        box with five dozen liquor
+      </text>
+      <text x="30" y="360" style="fill: var(--dark); font-size: 20px;">
+        jugs.
+      </text>
+      
+      
+      <rect x=40 y=420 width=280 height=36 rx=18 ry=18 style="fill: var(--light); stroke: var(--theme); stroke-width: 2px;"/>
+      <text x="180" y="444" text-anchor="middle" style="fill: var(--theme); font-size: 20px;">
+        Hollow Button
+      </text>
+      
+      <rect x=40 y=485 width=280 height=36 rx=18 ry=18 style="fill: var(--theme); stroke: var(--theme); stroke-width: 2px;"/>
+      <text x="180" y="509" text-anchor="middle" style="fill: var(--light); font-size: 20px;">
+        Solid Button
+      </text>
+      
+      
+      <rect x=0 y=576 width=360 height=64 style="fill: var(--accent);"/>
+      <circle cx="55" cy="608" r="8" style="fill: var(--dark); stroke-width: 2px;"/>
+      <circle cx="140" cy="608" r="8" style="fill: var(--light); stroke-width: 2px;"/>
+      <circle cx="220" cy="608" r="8" style="fill: var(--light); stroke-width: 2px;"/>
+      <circle cx="295" cy="608" r="8" style="fill: var(--light); stroke-width: 2px;"/>
+      
+    </svg>
+  </div>
+  
+
+  <div class="container" style="display: inline-block; text-align: center; padding: 40px;">
+    <svg viewBox="0 0 360 640" class="mockup">
+      <style>
+        :root{
+          --dark: #{{row['colors'][0]}};
+          --theme: #{{row['colors'][1]}};
+          --accent: #{{row['colors'][2]}};
+          --light: #{{row['colors'][3]}};
+        }
+      </style>
+
+    
+      <!-- bg -->
+      <rect x=0 y=0 width=360 height=640 style="fill: #ffffff;"/>
+      
+      <!-- header -->
+      <rect x=0 y=0 width=360 height=128 style="fill: var(--theme);"/>
+      <text x="30" y="80" style="fill: #ffffff; font-size: 40px;">Mockup</text>
+      <rect x=280 y=60 width=50 height=5 style="fill: var(--dark);"/>
+      <rect x=300 y=70 width=30 height=5 style="fill: var(--dark);"/>
+      
+      <text x="30" y="210" style="fill: var(--dark); font-size: 30px;">
+        Heading
+      </text>
+      <rect x=30 y=220 width=30 height=3 style="fill: var(--accent);"/>
+      
+      <text x="30" y="270" style="fill: var(--dark); font-size: 20px;">
+        The quick brown fox jumps
+      </text>
+      <text x="30" y="300" style="fill: var(--dark); font-size: 20px;">
+        over the lazy dog. Pack my
+      </text>
+      <text x="30" y="330" style="fill: var(--dark); font-size: 20px;">
+        box with five dozen liquor
+      </text>
+      <text x="30" y="360" style="fill: var(--dark); font-size: 20px;">
+        jugs.
+      </text>
+      
+      
+      <rect x=40 y=420 width=280 height=36 rx=18 ry=18 style="fill: var(--light); stroke: var(--light); stroke-width: 2px;"/>
+      <text x="180" y="444" text-anchor="middle" style="fill: var(--dark); font-size: 20px;">
+        Tinted Button
+      </text>
+      
+      <rect x=40 y=485 width=280 height=36 rx=18 ry=18 style="fill: var(--dark); stroke: var(--dark); stroke-width: 2px;"/>
+      <text x="180" y="509" text-anchor="middle" style="fill: var(--light); font-size: 20px;">
+        Solid Button
+      </text>
+      
+      
+      <rect x=0 y=576 width=360 height=64 style="fill: var(--dark);"/>
+      <circle cx="55" cy="608" r="8" style="fill: var(--accent); stroke-width: 2px;"/>
+      <circle cx="140" cy="608" r="8" style="fill: var(--light); stroke-width: 2px;"/>
+      <circle cx="220" cy="608" r="8" style="fill: var(--light); stroke-width: 2px;"/>
+      <circle cx="295" cy="608" r="8" style="fill: var(--light); stroke-width: 2px;"/>
+      
+    </svg>
+  </div>
+  
+  <div class="container" style="display: inline-block; text-align: center; padding: 40px;">
+    <svg viewBox="0 0 360 640" class="mockup">
+      <style>
+        :root{
+          --dark: #{{row['colors'][0]}};
+          --theme: #{{row['colors'][1]}};
+          --accent: #{{row['colors'][2]}};
+          --light: #{{row['colors'][3]}};
+        }
+      </style>
+
+
+      <!-- bg -->
+      <rect x=0 y=0 width=360 height=640 style="fill: var(--dark);"/>
+      
+      <!-- header -->
+      <rect x=0 y=0 width=360 height=128 style="fill: var(--dark);"/>
+      <text x="30" y="80" style="fill: var(--light); font-size: 40px;">Mockup</text>
+      <rect x=280 y=60 width=50 height=5 style="fill: var(--theme);"/>
+      <rect x=300 y=70 width=30 height=5 style="fill: var(--theme);"/>
+      
+      <text x="30" y="210" style="fill: var(--accent); font-size: 30px;">
+        Heading
+      </text>
+      <rect x=30 y=220 width=30 height=3 style="fill: var(--theme);"/>
+      
+      <text x="30" y="270" style="fill: var(--light); font-size: 20px;">
+        The quick brown fox jumps
+      </text>
+      <text x="30" y="300" style="fill: var(--light); font-size: 20px;">
+        over the lazy dog. Pack my
+      </text>
+      <text x="30" y="330" style="fill: var(--light); font-size: 20px;">
+        box with five dozen liquor
+      </text>
+      <text x="30" y="360" style="fill: var(--light); font-size: 20px;">
+        jugs.
+      </text>
+      
+      
+      <rect x=40 y=420 width=280 height=36 rx=18 ry=18 style="fill: var(--dark); stroke: var(--accent); stroke-width: 2px;"/>
+      <text x="180" y="444" text-anchor="middle" style="fill: var(--accent); font-size: 20px;">
+        Hollow Button
+      </text>
+      
+      <rect x=40 y=485 width=280 height=36 rx=18 ry=18 style="fill: var(--accent); stroke: var(--accent); stroke-width: 2px;"/>
+      <text x="180" y="509" text-anchor="middle" style="fill: var(--dark); font-size: 20px;">
+        Solid Button
+      </text>
+      
+      
+      <rect x=0 y=576 width=360 height=64 style="fill: var(--theme);"/>
+      <circle cx="55" cy="608" r="8" style="fill: var(--accent); stroke-width: 2px;"/>
+      <circle cx="140" cy="608" r="8" style="fill: var(--light); stroke-width: 2px;"/>
+      <circle cx="220" cy="608" r="8" style="fill: var(--light); stroke-width: 2px;"/>
+      <circle cx="295" cy="608" r="8" style="fill: var(--light); stroke-width: 2px;"/>
+      
+    </svg>
+  </div>
+  
+  <div class="col25 center" style="display: inline-block; text-align: left;">
+    <h4>More with {{row['colornames'][0]}}</h4>  
+  {% for s in row['similars0'] %}
+    <a class="similar-link" href="/{{s['id']}}.html" style="text-align: left; display: grid; width: 100%; grid-template-columns: 1fr 1fr 1fr 1fr;">
+      <p style="grid-column: span 4; text-align: left;">#{{s['id']}}</p>
+      <p class="demo-box" style="background: #{{s['colors'][0]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][1]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][2]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][3]}};">
+      </p>
+    </a>
+    <br><br>     
+  {% endfor %}
+  </div>
+  
+  
+  <div class="col25 center" style="display: inline-block; text-align: left;">
+    <h4>More with {{row['colornames'][1]}}</h4>  
+  {% for s in row['similars1'] %}
+    <a class="similar-link" href="/{{s['id']}}.html" style="text-align: left; display: grid; width: 100%; grid-template-columns: 1fr 1fr 1fr 1fr;">
+      <p style="grid-column: span 4; text-align: left;">#{{s['id']}}</p>
+      <p class="demo-box" style="background: #{{s['colors'][0]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][1]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][2]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][3]}};">
+      </p>
+    </a>
+    <br><br>     
+  {% endfor %}
+  </div>
+  
+  
+  <div class="col25 center" style="display: inline-block; text-align: left;">
+    <h4>More with {{row['colornames'][2]}}</h4>  
+  {% for s in row['similars2'] %}
+    <a class="similar-link" href="/{{s['id']}}.html" style="text-align: left; display: grid; width: 100%; grid-template-columns: 1fr 1fr 1fr 1fr;">
+      <p style="grid-column: span 4; text-align: left;">#{{s['id']}}</p>
+      <p class="demo-box" style="background: #{{s['colors'][0]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][1]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][2]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][3]}};">
+      </p>
+    </a>
+    <br><br>     
+  {% endfor %}
+  </div>
+  
+  
+  <div class="col25 center" style="display: inline-block; text-align: left;">
+    <h4>More with {{row['colornames'][3]}}</h4>  
+  {% for s in row['similars3'] %}
+    <a class="similar-link" href="/{{s['id']}}.html" style="text-align: left; display: grid; width: 100%; grid-template-columns: 1fr 1fr 1fr 1fr;">
+      <p style="grid-column: span 4; text-align: left;">#{{s['id']}}</p>
+      <p class="demo-box" style="background: #{{s['colors'][0]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][1]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][2]}};">
+      </p>
+      <p class="demo-box" style="background: #{{s['colors'][3]}};">
+      </p>
+    </a>
+    <br><br>     
+  {% endfor %}
+  </div>
+  
+  
+  <footer>
+    Made with ❤️ by <a target="_blank" href="https://wios.xyz?utm_source=wioscolors">WIOS Labs</a>
+  </footer>
+  
+</body>
+
